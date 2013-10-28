@@ -25,12 +25,24 @@
         rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
         rel="stylesheet" type="text/css">
+
+  <!-- Add ShareThis in Pages -->
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">
+      stLight.options({
+            publisher: "673afe4f-eb78-41bf-8b02-69a262cf157f",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+      });
+  </script>
 </head>
 
 <body>
   <header role="banner"><hgroup>
   <h1><a href="http://mutarock.github.io/">Ray Blog</a></h1>
-</hgroup></header>
+</hgroup></header>  <!-- header -->
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
   <li><a href="http://mutarock.github.io/" rel="subscribe-rss">RSS</a></li>
 </ul>
@@ -44,9 +56,15 @@
 </form>
 -->
 
-<ul class="main-navigation">
-    <!-- TODO: add categories here? -->
-</ul></nav>
+<div class="navbar-inner">
+  <ul class="main-navigation">
+      <li><a href="http://mutarock.github.io">Blog</a></li>
+      <li><a href="/archives.html">Archive</a></li>
+      <li><a href="http://www.linkedin.com/pub/ching-hao-tseng/2b/57b/736">LinkedIn</a></li>
+      <!-- TODO: add categories here? -->
+  </ul>
+</div>
+</nav>  <!-- navigation -->
   <div id="main">
     <div id="content">
 <div class="blog-index">
@@ -67,6 +85,7 @@
 
   <br />
 </div></div>
+  <!-- content -->
 <aside class="sidebar">
   <section>
     <h1>Recent Posts</h1>
@@ -106,7 +125,8 @@
             <li><a href="http://python.org/" target="_blank">Python.org</a></li>
         </ul>
     </section>
-</aside>    </div>
+</aside>  <!-- sidebar -->
+    </div>
   </div>
   <footer role="contentinfo"><p>
   Copyright &copy; 2013 - Ray Tseng -
@@ -120,5 +140,6 @@
 	    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 	   })();
 	</script>
+  <!-- footer -->
 </body>
 </html>
