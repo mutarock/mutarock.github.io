@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Finish pelican basic settings</title>
+  <title>How to setup Pelican</title>
   <meta name="author" content="Ray Tseng">
 
   <link href="http://mutarock.github.io/feeds/atom.xml" type="application/atom+xml" rel="alternate"
@@ -74,11 +74,11 @@
   <article class="hentry" role="article">
 <header>
       <h1 class="entry-title">
-        <a href="http://mutarock.github.io/posts/2013/10/finish-pelican-basic-settings/" rel="bookmark"
-           title="Permalink to Finish pelican basic settings">Finish pelican basic settings</a>
-        <!-- Finish pelican basic settings -->
+        <a href="http://mutarock.github.io/posts/2013/11/how-to-setup-pelican/" rel="bookmark"
+           title="Permalink to How to setup Pelican">How to setup Pelican</a>
+        <!-- How to setup Pelican -->
       </h1>
-      <p class="meta"><time datetime="2013-10-23T00:15:00" pubdate>Wed 23 October 2013</time></p>
+      <p class="meta"><time datetime="2013-11-04T22:30:00" pubdate>Mon 04 November 2013</time></p>
 </header>
 
   <div class="entry-content">
@@ -91,9 +91,52 @@
       <span class='st_email_hcount' displayText='Email'></span>
     </div>
 
-    <p>Just finishing post something by pelican and github.
-Next step is to add some plugin and change themes.</p>
-<p>I will post some infomation in the next article for recording how to install and set up pelican on Linux(Ubuntu).</p>
+    <p>最近決定要來寫一下blog, 看到有人推薦pelican, 就決定來研究一下<br />
+剛好pelican是用python寫的, 就決定是你啦～  </p>
+<p>先安裝python 套件pip和virtualenv virtualenvwrapper<br />
+virtualenv在機器上模擬一個環境以便開發  </p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">pip</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">virtualenv</span> <span class="n">virtualenvwrapper</span>
+
+
+<span class="n">vi</span> <span class="o">~/</span><span class="p">.</span><span class="n">bashrc</span>
+<span class="cp"># Virtualenvwrapper</span>
+<span class="n">export</span> <span class="n">WORKON_HOME</span><span class="o">=</span><span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="p">.</span><span class="n">virtualenvs</span>
+<span class="n">source</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">virtualenvwrapper</span><span class="p">.</span><span class="n">sh</span>
+</pre></div>
+
+
+<p>搞定了之後就利用virtualenvwrapper模擬一個環境  </p>
+<div class="highlight"><pre><span class="n">mkvirtualenv</span> <span class="n">blog</span>
+<span class="n">workon</span> <span class="n">blog</span>
+</pre></div>
+
+
+<p>移動到資料夾, 並安裝pelican, markdown  </p>
+<div class="highlight"><pre><span class="n">cd</span> <span class="o">~/</span><span class="p">.</span><span class="n">virtualenvs</span><span class="o">/</span><span class="n">blog</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">pelican</span> <span class="n">markdown</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pelican</span> <span class="n">markdown</span>
+</pre></div>
+
+
+<p>準備工作到這邊已經差不多都做完了<br />
+已經安裝了可以寫blog的工具<br />
+再來可以先上github開一個repository, github可以幫忙我們把靜態網頁掛在上面<br />
+如果repository的名字是 username.github.io 表示這是使用者的個人頁面<br />
+一個人只能申請一個, 靜態網頁要放在master branch<br />
+如果是一般名稱的話是project頁面, 每個project可以有一個<br />
+靜態網頁要放在gh-pages branch  </p>
+<h2>開始blog設定</h2>
+<div class="highlight"><pre><span class="n">pelican</span><span class="o">-</span><span class="n">quickstart</span>
+</pre></div>
+
+
+<p>這邊會問一連串的問題, 填完之後就完成整個系統的基本設定<br />
+之後的一些資料就直接放連結, 有點懶的寫了 XDDD<br />
+<a href="http://blog.getpelican.com/">Pelican</a><br />
+<a href="http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/">slok's blog</a>  </p>
+<h2>額外功能</h2>
+<p>我有多去申請DISQUS和Sharethis, 可以用在留言和分享在facebook等平台</p>
 
     <!-- Add ShareThis in article -->
     <div class="sharethis-top">
@@ -110,8 +153,9 @@ Next step is to add some plugin and change themes.</p>
   <span class="byline author vcard">
     Posted by <span class="fn">Ray Tseng</span>
   </span>
-<time datetime="2013-10-23T00:15:00" pubdate>Wed 23 October 2013</time>  <span class="categories">
-    <a class="category" href="http://mutarock.github.io/tag/chat.html">chat</a>
+<time datetime="2013-11-04T22:30:00" pubdate>Mon 04 November 2013</time>  <span class="categories">
+    <a class="category" href="http://mutarock.github.io/tag/pelican.html">pelican</a>
+    <a class="category" href="http://mutarock.github.io/tag/python.html">python</a>
   </span>
 </p>    </footer>
 
@@ -180,9 +224,9 @@ Next step is to add some plugin and change themes.</p>
 </p></footer>
 	<script type="text/javascript">
 	  var disqus_shortname = 'mutarock';
-          var disqus_identifier = '/posts/2013/10/finish-pelican-basic-settings/';
-          var disqus_url = 'http://mutarock.github.io/posts/2013/10/finish-pelican-basic-settings/';
-          var disqus_title = 'Finish pelican basic settings';
+          var disqus_identifier = '/posts/2013/11/how-to-setup-pelican/';
+          var disqus_url = 'http://mutarock.github.io/posts/2013/11/how-to-setup-pelican/';
+          var disqus_title = 'How to setup Pelican';
 	  (function() {
 	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 	    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
