@@ -5,10 +5,10 @@
 <head>
   <meta charset="utf-8">
   <title>How to setup Pelican</title>
-  <meta name="author" content="Ray Tseng">
+  <meta name="author" content="MutaRock">
 
   <link href="http://mutarock.github.io/feeds/atom.xml" type="application/atom+xml" rel="alternate"
-        title="Ray Blog Atom Feed" />
+        title="Mutarock's Space Atom Feed" />
 
 
   <!-- http://t.co/dKP3o1e -->
@@ -43,7 +43,7 @@
 
 <body>
   <header role="banner"><hgroup>
-  <h1><a href="http://mutarock.github.io/">Ray Blog</a></h1>
+  <h1><a href="http://mutarock.github.io/">Mutarock's Space</a></h1>
 </hgroup></header>  <!-- header -->
   <nav role="navigation">
 <ul class="subscription" data-subscription="rss">
@@ -78,7 +78,7 @@
            title="Permalink to How to setup Pelican">How to setup Pelican</a>
         <!-- How to setup Pelican -->
       </h1>
-      <p class="meta"><time datetime="2013-11-04T22:30:00" pubdate>Mon 04 November 2013</time></p>
+      <p class="meta"><time datetime="2013-11-04T22:30:00+08:00" pubdate>Mon 04 November 2013</time></p>
 </header>
 
   <div class="entry-content">
@@ -95,27 +95,27 @@
 剛好pelican是用python寫的, 就決定是你啦～  </p>
 <p>先安裝python 套件pip和virtualenv virtualenvwrapper<br />
 virtualenv在機器上模擬一個環境以便開發  </p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">pip</span>
-<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">virtualenv</span> <span class="n">virtualenvwrapper</span>
+<div class="highlight"><pre><span class="x">sudo apt-get install python-pip</span>
+<span class="x">sudo pip install virtualenv virtualenvwrapper</span>
 
 
-<span class="n">vi</span> <span class="o">~/</span><span class="p">.</span><span class="n">bashrc</span>
-<span class="cp"># Virtualenvwrapper</span>
-<span class="n">export</span> <span class="n">WORKON_HOME</span><span class="o">=</span><span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="p">.</span><span class="n">virtualenvs</span>
-<span class="n">source</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">virtualenvwrapper</span><span class="p">.</span><span class="n">sh</span>
+<span class="x">vi ~/.bashrc</span>
+<span class="err">#</span><span class="x"> Virtualenvwrapper</span>
+<span class="x">export WORKON_HOME=</span><span class="p">$</span><span class="nv">HOME</span><span class="x">/.virtualenvs</span>
+<span class="x">source /usr/local/bin/virtualenvwrapper.sh</span>
 </pre></div>
 
 
 <p>搞定了之後就利用virtualenvwrapper模擬一個環境  </p>
-<div class="highlight"><pre><span class="n">mkvirtualenv</span> <span class="n">blog</span>
-<span class="n">workon</span> <span class="n">blog</span>
+<div class="highlight"><pre>mkvirtualenv blog
+workon blog
 </pre></div>
 
 
 <p>移動到資料夾, 並安裝pelican, markdown  </p>
-<div class="highlight"><pre><span class="n">cd</span> <span class="o">~/</span><span class="p">.</span><span class="n">virtualenvs</span><span class="o">/</span><span class="n">blog</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">pelican</span> <span class="n">markdown</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pelican</span> <span class="n">markdown</span>
+<div class="highlight"><pre>cd ~/.virtualenvs/blog
+pip install pelican markdown
+pip install --upgrade pelican markdown
 </pre></div>
 
 
@@ -127,7 +127,7 @@ virtualenv在機器上模擬一個環境以便開發  </p>
 如果是一般名稱的話是project頁面, 每個project可以有一個<br />
 靜態網頁要放在gh-pages branch  </p>
 <h2>開始blog設定</h2>
-<div class="highlight"><pre><span class="n">pelican</span><span class="o">-</span><span class="n">quickstart</span>
+<div class="highlight"><pre>pelican-quickstart
 </pre></div>
 
 
@@ -151,9 +151,9 @@ virtualenv在機器上模擬一個環境以便開發  </p>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
-    Posted by <span class="fn">Ray Tseng</span>
+    Posted by <span class="fn">MutaRock</span>
   </span>
-<time datetime="2013-11-04T22:30:00" pubdate>Mon 04 November 2013</time>  <span class="categories">
+<time datetime="2013-11-04T22:30:00+08:00" pubdate>Mon 04 November 2013</time>  <span class="categories">
     <a class="category" href="http://mutarock.github.io/tag/pelican.html">pelican</a>
     <a class="category" href="http://mutarock.github.io/tag/python.html">python</a>
   </span>
@@ -171,6 +171,9 @@ virtualenv在機器上模擬一個環境以便開發  </p>
   <section>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
+      <li class="post">
+          <a href="http://mutarock.github.io/posts/2015/01/happy-new-year-2015/">Happy New Year 2015</a>
+      </li>
       <li class="post">
           <a href="http://mutarock.github.io/posts/2013/11/how-to-setup-pelican/">How to setup Pelican</a>
       </li>
@@ -213,13 +216,14 @@ virtualenv在機器上模擬一個環境以便開發  </p>
         <ul>
             <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
             <li><a href="http://python.org/" target="_blank">Python.org</a></li>
+            <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
         </ul>
     </section>
 </aside>  <!-- sidebar -->
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Ray Tseng -
+  Copyright &copy; 2013 - MutaRock -
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p></footer>
 	<script type="text/javascript">

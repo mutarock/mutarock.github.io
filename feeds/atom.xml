@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ray Blog</title><link href="http://mutarock.github.io/" rel="alternate"></link><link href="http://mutarock.github.io/feeds/atom.xml" rel="self"></link><id>http://mutarock.github.io/</id><updated>2013-11-04T22:30:00+08:00</updated><entry><title>How to setup Pelican</title><link href="http://mutarock.github.io/posts/2013/11/how-to-setup-pelican/" rel="alternate"></link><updated>2013-11-04T22:30:00+08:00</updated><author><name>Ray Tseng</name></author><id>tag:mutarock.github.io,2013-11-04:posts/2013/11/how-to-setup-pelican/</id><summary type="html">&lt;p&gt;最近決定要來寫一下blog, 看到有人推薦pelican, 就決定來研究一下&lt;br /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mutarock's Space</title><link href="http://mutarock.github.io/" rel="alternate"></link><link href="http://mutarock.github.io/feeds/atom.xml" rel="self"></link><id>http://mutarock.github.io/</id><updated>2015-01-06T16:00:00+08:00</updated><entry><title>Happy New Year 2015</title><link href="http://mutarock.github.io/posts/2015/01/happy-new-year-2015/" rel="alternate"></link><updated>2015-01-06T16:00:00+08:00</updated><author><name>MutaRock</name></author><id>tag:mutarock.github.io,2015-01-06:posts/2015/01/happy-new-year-2015/</id><summary type="html">&lt;p&gt;Happy New Year~~~~&lt;/p&gt;
+&lt;p&gt;Just reinstall ubuntu 14.10 for myself.
+Try to hosy my blog on AWS next time.&lt;/p&gt;</summary><category term="chat"></category></entry><entry><title>How to setup Pelican</title><link href="http://mutarock.github.io/posts/2013/11/how-to-setup-pelican/" rel="alternate"></link><updated>2013-11-04T22:30:00+08:00</updated><author><name>MutaRock</name></author><id>tag:mutarock.github.io,2013-11-04:posts/2013/11/how-to-setup-pelican/</id><summary type="html">&lt;p&gt;最近決定要來寫一下blog, 看到有人推薦pelican, 就決定來研究一下&lt;br /&gt;
 剛好pelican是用python寫的, 就決定是你啦～  &lt;/p&gt;
 &lt;p&gt;先安裝python 套件pip和virtualenv virtualenvwrapper&lt;br /&gt;
 virtualenv在機器上模擬一個環境以便開發  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;virtualenv&lt;/span&gt; &lt;span class="n"&gt;virtualenvwrapper&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="x"&gt;sudo apt-get install python-pip&lt;/span&gt;
+&lt;span class="x"&gt;sudo pip install virtualenv virtualenvwrapper&lt;/span&gt;
 
 
-&lt;span class="n"&gt;vi&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bashrc&lt;/span&gt;
-&lt;span class="cp"&gt;# Virtualenvwrapper&lt;/span&gt;
-&lt;span class="n"&gt;export&lt;/span&gt; &lt;span class="n"&gt;WORKON_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;virtualenvs&lt;/span&gt;
-&lt;span class="n"&gt;source&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;virtualenvwrapper&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt;
+&lt;span class="x"&gt;vi ~/.bashrc&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="x"&gt; Virtualenvwrapper&lt;/span&gt;
+&lt;span class="x"&gt;export WORKON_HOME=&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="x"&gt;/.virtualenvs&lt;/span&gt;
+&lt;span class="x"&gt;source /usr/local/bin/virtualenvwrapper.sh&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;搞定了之後就利用virtualenvwrapper模擬一個環境  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mkvirtualenv&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt;
-&lt;span class="n"&gt;workon&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;mkvirtualenv blog
+workon blog
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;移動到資料夾, 並安裝pelican, markdown  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;virtualenvs&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;
-&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="n"&gt;markdown&lt;/span&gt;
-&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;upgrade&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="n"&gt;markdown&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;cd ~/.virtualenvs/blog
+pip install pelican markdown
+pip install --upgrade pelican markdown
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -35,7 +37,7 @@ virtualenv在機器上模擬一個環境以便開發  &lt;/p&gt;
 如果是一般名稱的話是project頁面, 每個project可以有一個&lt;br /&gt;
 靜態網頁要放在gh-pages branch  &lt;/p&gt;
 &lt;h2&gt;開始blog設定&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quickstart&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pelican-quickstart
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -44,6 +46,6 @@ virtualenv在機器上模擬一個環境以便開發  &lt;/p&gt;
 &lt;a href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;&lt;br /&gt;
 &lt;a href="http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/"&gt;slok's blog&lt;/a&gt;  &lt;/p&gt;
 &lt;h2&gt;額外功能&lt;/h2&gt;
-&lt;p&gt;我有多去申請DISQUS和Sharethis, 可以用在留言和分享在facebook等平台&lt;/p&gt;</summary><category term="pelican"></category><category term="python"></category></entry><entry><title>Finish pelican basic settings</title><link href="http://mutarock.github.io/posts/2013/10/finish-pelican-basic-settings/" rel="alternate"></link><updated>2013-10-23T00:15:00+08:00</updated><author><name>Ray Tseng</name></author><id>tag:mutarock.github.io,2013-10-23:posts/2013/10/finish-pelican-basic-settings/</id><summary type="html">&lt;p&gt;Just finishing post something by pelican and github.
+&lt;p&gt;我有多去申請DISQUS和Sharethis, 可以用在留言和分享在facebook等平台&lt;/p&gt;</summary><category term="pelican"></category><category term="python"></category></entry><entry><title>Finish pelican basic settings</title><link href="http://mutarock.github.io/posts/2013/10/finish-pelican-basic-settings/" rel="alternate"></link><updated>2013-10-23T00:15:00+08:00</updated><author><name>MutaRock</name></author><id>tag:mutarock.github.io,2013-10-23:posts/2013/10/finish-pelican-basic-settings/</id><summary type="html">&lt;p&gt;Just finishing post something by pelican and github.
 Next step is to add some plugin and change themes.&lt;/p&gt;
-&lt;p&gt;I will post some infomation in the next article for recording how to install and set up pelican on Linux(Ubuntu).&lt;/p&gt;</summary><category term="chat"></category></entry><entry><title>Post for testing ghp-import</title><link href="http://mutarock.github.io/posts/2013/10/post-for-testing-ghp-import/" rel="alternate"></link><updated>2013-10-21T21:15:00+08:00</updated><author><name>Ray Tseng</name></author><id>tag:mutarock.github.io,2013-10-21:posts/2013/10/post-for-testing-ghp-import/</id><summary type="html">&lt;p&gt;This is a post for testing ghp-import tool&lt;/p&gt;</summary><category term="pelican"></category><category term="python"></category></entry><entry><title>My first post</title><link href="http://mutarock.github.io/posts/2013/10/my-first-post/" rel="alternate"></link><updated>2013-10-20T21:30:00+08:00</updated><author><name>Ray Tseng</name></author><id>tag:mutarock.github.io,2013-10-20:posts/2013/10/my-first-post/</id><summary type="html">&lt;p&gt;This is my first post for testing pelican and github&lt;/p&gt;</summary><category term="pelican"></category><category term="python"></category></entry></feed>
+&lt;p&gt;I will post some infomation in the next article for recording how to install and set up pelican on Linux(Ubuntu).&lt;/p&gt;</summary><category term="chat"></category></entry><entry><title>Post for testing ghp-import</title><link href="http://mutarock.github.io/posts/2013/10/post-for-testing-ghp-import/" rel="alternate"></link><updated>2013-10-21T21:15:00+08:00</updated><author><name>MutaRock</name></author><id>tag:mutarock.github.io,2013-10-21:posts/2013/10/post-for-testing-ghp-import/</id><summary type="html">&lt;p&gt;This is a post for testing ghp-import tool&lt;/p&gt;</summary><category term="pelican"></category><category term="python"></category></entry><entry><title>My first post</title><link href="http://mutarock.github.io/posts/2013/10/my-first-post/" rel="alternate"></link><updated>2013-10-20T21:30:00+08:00</updated><author><name>MutaRock</name></author><id>tag:mutarock.github.io,2013-10-20:posts/2013/10/my-first-post/</id><summary type="html">&lt;p&gt;This is my first post for testing pelican and github&lt;/p&gt;</summary><category term="pelican"></category><category term="python"></category></entry></feed>
